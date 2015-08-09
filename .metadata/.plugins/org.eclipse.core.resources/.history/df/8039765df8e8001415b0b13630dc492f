@@ -1,0 +1,51 @@
+package com.jlc.test;
+	class Student implements Cloneable{  
+	    int id;  
+	    String name;  
+	    int age;
+	    public Student() {
+			// TODO Auto-generated constructor stub
+	    	System.out.println("Default constructor");
+		}
+	    Student(int id,String name){  
+	    this.id = id;  
+	    this.name = name;  
+	    }  
+	    Student(int id,String name,int age){  
+	    this.id = id;  
+	    this.name = name;  
+	    this.age=age;  
+	    }  
+	    void display(){System.out.println(id+" "+name+" "+age);}  
+	   
+	    public static void main(String args[]) throws CloneNotSupportedException{  
+	    Student s1 = new Student(111,"Karan");  
+	    Student s2 =(Student) s1.clone();
+	    
+	    Student s3 = new Student();
+	    Student s4 = (Student)s3.clone();
+	    System.out.println(s1 == s2);
+	    System.out.println(s1.equals(s2));
+	    System.out.println(s1.name == s2.name );
+	    System.out.println(s1.name.equals(s2.name));
+	    s1.display();  
+	    s2.display();  
+	    s3.display();
+	    s4.display();
+	    System.out.println(s3);
+	    System.out.println(s4);
+	   }
+	    @Override
+	    protected Object clone() throws CloneNotSupportedException {
+	    	// TODO Auto-generated method stub
+	    	return super.clone();
+	    }
+	    @Override
+	    public String toString() {
+	    	// TODO Auto-generated method stub
+	    	return ""+this.hashCode();
+	    }
+	    
+	}  
+
+

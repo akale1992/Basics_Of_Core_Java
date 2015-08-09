@@ -1,0 +1,23 @@
+package com.sample;
+
+public class Lab {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s1 ="jlc";
+		String s2 = new String("jLc");
+		String s3 = s2.intern();
+		System.out.println(s1==s2);
+		System.out.println(s2==s3);
+		System.out.println(s1==s3);
+		System.out.println(s1.equals(s2));
+		System.out.println(s1.compareTo(s2));
+		StringBuffer s4 = new StringBuffer("ashish");
+		s4.append(0.0f);
+		System.out.println(s4);
+		s4.insert(3, "java");
+		System.out.println(s4);
+
+	}
+
+}

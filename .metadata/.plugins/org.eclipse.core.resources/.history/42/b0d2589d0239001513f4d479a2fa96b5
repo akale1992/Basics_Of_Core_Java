@@ -1,0 +1,52 @@
+package com.io.app;
+
+class A {
+	static void staticMethod() {
+		System.out.println("Static Method");
+	}
+	void selection (){
+		int [] arr ={10,30,25,35,20};
+		
+		for (int i = 0; i < arr.length-1; i++) {
+			int smallindex = arr[i];
+			for (int j = i+1; j < arr.length; j++) {
+				if (arr[smallindex]>arr[j]) {
+					smallindex=j;
+					
+				}
+				int temp = arr[i];
+				arr[i] = arr[smallindex];
+				arr[smallindex]=temp;
+			}
+			
+		}
+		for (int i : arr) {
+			System.out.println(i+" ");
+		}
+	}
+	
+
+    int methodOfA()
+    {
+        return (true ? null : 0);
+        //return null;
+//        return (false ? null : 0);
+
+
+    }
+}
+
+public class MainClass {
+	public static void main(String[] args) {
+		A a = null;
+
+//		a.staticMethod();
+		
+		a=new A();
+//		a.methodOfA();
+		a.selection();
+		
+	}
+	
+	
+}

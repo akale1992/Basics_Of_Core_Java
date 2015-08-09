@@ -1,0 +1,30 @@
+package com.jlc.test;
+	class Student{  
+	    int id;  
+	    String name;  
+	    int age;
+	    public Student() {
+			// TODO Auto-generated constructor stub
+	    	System.out.println("Default constructor");
+		}
+	    Student(int id,String name){  
+	    this.id = id;  
+	    this.name = name;  
+	    }  
+	    Student(int id,String name,int age){  
+	    this.id = id;  
+	    this.name = name;  302.
+	    this.age=age;  
+	    }  
+	    void display(){System.out.println(id+" "+name+" "+age);}  
+	   
+	    public static void main(String args[]){  
+	    Student s1 = new Student(111,"Karan");  
+	    Student s2 = new Student(222,"Aryan",25); 
+	    Student s3 = new Student();
+	    s1.display();  
+	    s2.display();  
+	   }  
+	}  
+
+

@@ -1,0 +1,10 @@
+package imageoper;
+
+public class DB {
+	
+	public static void main(String[] args) {
+		DBConn db= new DBConn();
+		System.out.println(db.getConn());
+	}
+
+}

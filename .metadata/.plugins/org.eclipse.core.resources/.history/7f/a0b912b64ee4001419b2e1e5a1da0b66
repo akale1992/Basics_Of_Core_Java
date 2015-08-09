@@ -1,0 +1,37 @@
+package com.ashish;
+
+import java.util.Scanner;
+
+public class Lab {
+   
+   
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter the value of a,b,c");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c= sc.nextInt();
+		int max;
+		Integer f = Integer.valueOf("ashish",  5);
+		System.out.println(f);
+		 
+		if (a>b&&a>c) {
+			max=a;
+
+		}
+		else if (b>a&& b>c) {
+			max=b;
+
+		}
+		else{
+			max=c;
+		}
+		Integer a1 = new Integer(a);
+System.out.println("Maximum no is  "+max);
+		
+		
+
+	}
+
+}

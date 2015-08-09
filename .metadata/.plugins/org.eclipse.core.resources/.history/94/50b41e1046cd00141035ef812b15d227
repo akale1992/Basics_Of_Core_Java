@@ -1,0 +1,28 @@
+package com.cts;
+
+import java.util.Scanner;
+
+public class Lab {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the value of Number of elements N ");
+		int N = sc.nextInt();
+		int sum = 0,min,max;
+		float avg ;
+		int arr [] = new int [N];
+		for (int i = 0; i < arr.length; i++) {
+			 arr [i] = sc.nextInt(); 
+			 sum =sum + arr[i];
+			 avg = sum/arr.length;
+			 min = arr [0];
+			 if (min > arr[i])
+				 min = arr [i];
+			 
+		}
+		System.out.println("summation "+sum);
+
+	}
+
+}
