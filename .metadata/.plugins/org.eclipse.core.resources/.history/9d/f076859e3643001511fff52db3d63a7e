@@ -1,0 +1,73 @@
+package com.jspider.corejava.Jspider;
+
+import java.util.Hashtable;
+
+class NewInt{
+	String s;
+	public NewInt(String s) {
+		// TODO Auto-generated constructor stub
+		this.s=s;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return s;
+	}
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		s=s.toUpperCase();
+		char[] c = s.toCharArray();
+		int sum = 0;
+		for (char d : c) {
+			sum+=d;
+	}
+		System.out.println(sum);
+		return sum;
+}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		NewInt nw= (NewInt) obj;
+		return this.hashCode()==nw.hashCode()?true:false ;
+	}
+}
+
+class Anagram{
+	private Hashtable<NewInt, NewInt> dictionary= new Hashtable<>();
+	
+	public int size() {
+		return dictionary.size();
+	}
+	
+	
+	public NewInt insert(String s){
+		NewInt nw=new NewInt(s.toUpperCase());
+		return dictionary.put(nw, nw);
+		
+	}
+	
+	public NewInt find(String s) {
+		return dictionary.get(new NewInt(s.toUpperCase()));
+	}
+}
+
+public class AnagramDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Anagram a = new Anagram();
+		System.out.println(a.insert("RESET"));
+		System.out.println(a.insert("seter"));
+		System.out.println(a.insert("Ester"));
+		
+		System.out.println(a.size());
+		
+		System.out.println("Found:  "+a.find("Esrte"));
+
+	}
+
+}

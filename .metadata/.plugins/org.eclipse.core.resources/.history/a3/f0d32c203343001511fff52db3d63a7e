@@ -1,0 +1,49 @@
+package com.jspider.corejava.Jspider;
+
+import java.util.Hashtable;
+
+class Anagram{
+	private Hashtable<Long, String> dictionary= new Hashtable();
+	
+	private long getHash(String s){
+		s=s.toUpperCase();
+		char[] c = s.toCharArray();
+		long sum = 0L;
+		for (char d : c) {
+			sum+=d;
+		}
+		return sum;
+	}
+	
+	
+	
+	public String insert(String s){
+		s=s.toUpperCase();
+		long hash=getHash(s);
+		
+		return dictionary.put(hash, s);
+		
+	}
+	
+	public String find(String s) {
+		s=s.toUpperCase();
+		long hash=getHash(s);
+		return dictionary.get(hash);
+	}
+}
+
+public class AnagramDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Anagram a = new Anagram();
+		System.out.println(a.insert("RESET"));
+		System.out.println(a.insert("seter"));
+		System.out.println(a.insert("Ester"));
+		
+		System.out.println("Found:  "+a.find("Esrte"));
+
+	}
+
+}

@@ -1,0 +1,39 @@
+package com.jspider.corejava.Jspider;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+
+class Anagram{
+	private Map<Integer, LinkedList<String>> dictionary= new HashMap<>();
+	
+	private int getHash(String s){
+		char[] c = s.toCharArray();
+		Long sum = 0L;
+		for (char d : c) {
+			sum+=d;
+		}
+		return sum;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+	
+	public Boolean insert(String s){
+		
+		return null;
+		
+	}
+}
+
+public class AnagramDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

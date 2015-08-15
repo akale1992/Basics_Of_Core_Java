@@ -1,4 +1,5 @@
 package com.jlc.test;
+import java.util.*;
 	class Student implements Cloneable{  
 	    int id;  
 	    String name;  
@@ -11,6 +12,8 @@ package com.jlc.test;
 	    this.id = id;  
 	    this.name = name;  
 	    }  
+	   static Date d = new Date();
+       
 	    Student(int id,String name,int age){  
 	    this.id = id;  
 	    this.name = name;  
@@ -35,6 +38,7 @@ package com.jlc.test;
 	    s4.display();
 	    System.out.println(s3);
 	    System.out.println(s4);
+	    System.out.println(d);
 	   }
 	    @Override
 	    protected Object clone() throws CloneNotSupportedException {

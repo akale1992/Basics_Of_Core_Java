@@ -1,0 +1,92 @@
+package com.jspider.corejava.Jspider;
+
+import java.util.Hashtable;
+import java.util.LinkedList;
+
+class NewInt {
+	String s;
+
+	public NewInt(String s) {
+		// TODO Auto-generated constructor stub
+		this.s = s;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return s;
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		s = s.toUpperCase();
+		char[] c = s.toCharArray();
+		int sum = 0;
+		for (char d : c) {
+			sum += d;
+		}
+		// System.out.println(sum);
+		return sum;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		NewInt nw = (NewInt) obj;
+		return this.hashCode() == nw.hashCode() ? true : false;
+	}
+}
+
+class Anagram {
+	private Hashtable<NewInt, LinkedList<NewInt>> dictionary = new Hashtable<>();
+
+	public int size() {
+		return dictionary.size();
+	}
+
+	public LinkedList<NewInt> insert(String s) {
+		NewInt nw = new NewInt(s.toUpperCase());
+		LinkedList<NewInt> l = dictionary.get(nw);
+		if (l == null) {
+			l = new LinkedList<NewInt>();
+		}
+		l.add(nw);
+		return dictionary.put(nw, l);
+
+	}
+
+	public LinkedList<NewInt> find(String s) {
+		return dictionary.get(new NewInt(s.toUpperCase()));
+	}
+}
+
+public class AnagramDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Anagram a = new Anagram();
+		System.out.println(a.insert("RESET"));
+		System.out.println(a.insert("seter"));
+		System.out.println(a.insert("Ester"));
+
+		System.out.println(a.size());
+
+		System.out.println("Found:  " + a.find("Esrte"));
+		System.out.println("Found:  " + a.find("stree"));
+		System.out.println("Found:  " + a.find("ester"));
+		
+		/* o/p
+		null
+		[RESET, SETER]
+		[RESET, SETER, ESTER]
+		1
+		Found:  [RESET, SETER, ESTER]
+		Found:  [RESET, SETER, ESTER]
+		Found:  [RESET, SETER, ESTER]*/
+
+	}
+
+}
+							

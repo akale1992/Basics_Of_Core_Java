@@ -1,0 +1,10 @@
+package com.jspider.corejava.Jspider;
+
+public class AnagramDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

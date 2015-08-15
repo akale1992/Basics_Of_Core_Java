@@ -1,0 +1,11 @@
+package com.jspider.corejava.Jspider;
+
+public class RegexReplaceDemo {
+	
+	public static void main(String[] args) {
+		String givenString="Ashijksh", matchedString="sh";
+		
+		System.out.println(givenString.replaceAll("^sh", "+"));
+	}
+
+}
